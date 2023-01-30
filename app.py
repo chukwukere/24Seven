@@ -19,6 +19,7 @@ x_interim["Month"] = x
 new_data =pd.DataFrame(x_interim.groupby(["Email"])["Order Amount","Order Quantity","Email"].count())
 
 app = Dash(__name__)
+server = app.server
 app.layout = html.Div(
     children=[
         html.H1(children= "24Seven order from data",),
