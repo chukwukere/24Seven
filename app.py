@@ -12,8 +12,8 @@ Seven_form = pd.read_csv(google_sheet_url)
 x_interim = Seven_form[["Timestamp","Order Amount","Order Quantity","Email"]]
 #x = []
 # Adding columns to the x_interim dataframe so that we can plot graphs
-x_interim["Month"] = pd.to_datetime(Seven_form["Timestamp"], infer_datetime_format=True).dt.month_name()
-x_interim["Weekday"] = pd.to_datetime(Seven_form["Timestamp"], infer_datetime_format=True).dt.day_name()
+x_interim["Month"] = pd.to_datetime(Seven_form["Timestamp"], dayfirst=True).dt.month_name()
+x_interim["Weekday"] = pd.to_datetime(Seven_form["Timestamp"], dayfirst=True).dt.day_name()
 
 # for i in x_interim["Timestamp"]:
 #      x1 = list_of_months[int(str(i).split("/",3)[1])]
